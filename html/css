@@ -1,0 +1,310 @@
+Q3. <html>
+    <head>
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        nav {
+            background-color: #555;
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>My Portfolio</h1>
+</header>
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Projects</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+</nav>
+<section>
+    <h2>About Me</h2>
+    <p>Hello! I am a web developer passionate about creating beautiful and functional websites.</p>
+    <h2>Projects</h2>
+    <ul>
+        <li>Portfolio Website</li>
+        <li>Blog Platform</li>
+        <li>Online Store</li>
+    </ul>
+</section>
+<footer>
+    &copy; 2025 My Portfolio. All rights reserved.
+</footer>
+
+</body>
+</html>
+
+Q14. <!DOCTYPE html>
+<html>
+<head>
+    <title>Styled Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+        }
+        .form-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #output {
+            margin-top: 15px;
+            padding: 10px;
+            background: #e6ffe6;
+            border: 1px solid #b3ffb3;
+            border-radius: 4px;
+            display: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-box">
+    <h2>Contact Us</h2>
+
+    <form id="myForm">
+        <label>Name:</label>
+        <input type="text" id="name" required>
+
+        <label>Email:</label>
+        <input type="email" id="email" required>
+
+        <label>Message:</label>
+        <textarea id="message" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="output"></div>
+</div>
+
+<script>
+document.getElementById("myForm").onsubmit = function(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+
+    let outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = "<strong>Thank you, " + name + "!</strong><br>We will contact you at <em>" + email + "</em>.";
+    outputDiv.style.display = "block";
+
+    document.getElementById("myForm").reset();
+}
+</script>
+
+</body>
+</html>
+
+Q16. <!DOCTYPE html>
+<html>
+<head>
+    <title>Sum of Two Numbers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: center;
+        }
+        input, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 15px;
+            padding: 10px;
+            background: #e6ffe6;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Add Two Numbers</h2>
+    <input type="number" id="num1" placeholder="Enter first number" required>
+    <input type="number" id="num2" placeholder="Enter second number" required>
+    <button onclick="calculateSum()">Calculate</button>
+    <div id="output" class="result"></div>
+</div>
+
+<script>
+function calculateSum() {
+    let n1 = parseFloat(document.getElementById('num1').value);
+    let n2 = parseFloat(document.getElementById('num2').value);
+
+    if (!isNaN(n1) && !isNaN(n2)) {
+        document.getElementById('output').innerText = 
+            "The sum of " + n1 + " and " + n2 + " is: " + (n1 + n2);
+    } else {
+        document.getElementById('output').innerText = "Please enter both numbers.";
+    }
+}
+</script>
+
+</body>
+</html>
+
+Q19. <!DOCTYPE html>
+<html>
+<head>
+    <title>Highest and Lowest Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 320px;
+        }
+        input, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 15px;
+            padding: 10px;
+            background: #e6ffe6;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Find Highest & Lowest Number</h2>
+    <input type="text" id="numbers" placeholder="Enter numbers separated by commas">
+    <button onclick="findHighLow()">Find</button>
+    <div id="output" class="result"></div>
+</div>
+
+<script>
+function findHighLow() {
+    let input = document.getElementById("numbers").value;
+    let numArray = input.split(",").map(num => parseFloat(num.trim())).filter(n => !isNaN(n));
+
+    if (numArray.length > 0) {
+        let highest = Math.max(...numArray);
+        let lowest = Math.min(...numArray);
+        document.getElementById("output").innerHTML =
+            "Highest value: " + highest + "<br>Lowest value: " + lowest;
+    } else {
+        document.getElementById("output").innerHTML = "Please enter valid numbers.";
+    }
+}
+</script>
+
+</body>
+</html>
+
+
