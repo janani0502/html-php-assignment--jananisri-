@@ -1,0 +1,47 @@
+ <?php
+session_start(); // (a) Start or resume session
+
+// (b) Check if counter exists, else start at 0
+if (!isset($_SESSION['counter'])) {
+    $_SESSION['counter'] = 0;
+    echo "New session started.<br>";
+}
+
+// (c) Increment counter
+$_SESSION['counter']++;
+
+// (d) Store back in session
+echo "You have visited this page " . $_SESSION['counter'] . " times.<br>";
+
+// (e) Provide link back with session ID
+echo "<a href='" . $_SERVER['PHP_SELF'] . "?PHPSESSID=" . session_id() . "'>Reload Page with Session ID</a><br><br>";
+?>
+
+<!-- (f) File upload form -->
+<form method="post" enctype="multipart/form-data">
+    <label>Select file to upload:</label>
+    <input type="file" name="myfile">
+    <input type="submit" value="Upload">
+</form>
+
+<?php
+// Handle file upload
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['myfile'])) {
+    $uploadDir = "uploads/";
+    if (!is_dir($uploadDir)) {
+        mkdir($uploadDir); // create uploads folder if not exists
+    }
+    $targetFile = $uploadDir . basename($_FILES['myfile']['name']);
+
+    // Check if file already exists
+    if (file_exists($targetFile)) {
+        echo "<p style='color:red;'>Error: This file already exists. Please choose a different file.</p>";
+    } else {
+        if (move_uploaded_file($_FILES['myfile']['tmp_name'], $targetFile)) {
+            echo "<p style='color:green;'>File uploaded successfully!</p>";
+        } else {
+            echo "<p style='color:red;'>Error uploading file.</p>";
+        }
+    }
+}
+?>

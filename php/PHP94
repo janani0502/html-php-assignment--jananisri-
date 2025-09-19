@@ -1,0 +1,51 @@
+<?php
+$file = "test.txt";
+
+// 1. Read mode (r) - file must exist
+$fp = fopen($file, "r");
+echo "<b>Reading file (r):</b><br>";
+echo nl2br(fread($fp, filesize($file))) . "<br><br>";
+fclose($fp);
+
+// 2. Read + Write mode (r+)
+$fp = fopen($file, "r+");
+fwrite($fp, "Start of file changed.\n");
+fclose($fp);
+
+// 3. Write mode (w) - overwrites file
+$fp = fopen($file, "w");
+fwrite($fp, "This text overwrites the file.\n");
+fclose($fp);
+
+// 4. Write + Read mode (w+)
+$fp = fopen($file, "w+");
+fwrite($fp, "Overwritten again, but can also read.\n");
+rewind($fp);
+echo "<b>w+ content:</b><br>" . nl2br(fread($fp, filesize($file))) . "<br><br>";
+fclose($fp);
+
+// 5. Append mode (a)
+$fp = fopen($file, "a");
+fwrite($fp, "Appended line (a mode).\n");
+fclose($fp);
+
+// 6. Append + Read mode (a+)
+$fp = fopen($file, "a+");
+fwrite($fp, "Appended again with a+ mode.\n");
+fclose($fp);
+
+// 7. filesize()
+echo "<b>File size:</b> " . filesize($file) . " bytes<br><br>";
+
+// 8. Copy file
+copy($file, "copy_test.txt");
+echo "File copied to copy_test.txt<br>";
+
+// 9. Rename file
+rename("copy_test.txt", "renamed_test.txt");
+echo "copy_test.txt renamed to renamed_test.txt<br>";
+
+// 10. Delete file
+unlink("renamed_test.txt");
+echo "renamed_test.txt deleted<br>";
+?>

@@ -1,0 +1,11 @@
+92.<?php
+// Step 1: Create cookie
+setcookie("username", "Lakshmisree", time() + 60, "/");
+
+// Step 2: Retrieve cookie value
+if (isset($_COOKIE["username"])) {
+    echo "Welcome, " . $_COOKIE["username"];
+} else {
+    echo "Hello, new visitor!";
+}
+?>

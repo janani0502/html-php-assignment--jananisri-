@@ -1,0 +1,20 @@
+ <?php
+// File name
+$filename = "test.txt";
+
+// Check if file exists
+if (file_exists($filename)) {
+    // Open file in read mode
+    $file = fopen($filename, "r") or die("Unable to open file!");
+
+    // Read until end of file
+    while (!feof($file)) {
+        echo fgets($file) . "<br>"; // Read line by line
+    }
+
+    // Close file
+    fclose($file);
+} else {
+    echo "File not found!";
+}
+?>

@@ -1,0 +1,17 @@
+ <?php
+// Start the session
+session_start();
+
+// Store data in session variables
+$_SESSION["username"] = "Lakshmisree";
+$_SESSION["email"] = "lakshmisree@example.com";
+
+// Display stored session variables
+echo "Username: " . $_SESSION["username"] . "<br>";
+echo "Email: " . $_SESSION["email"] . "<br>";
+
+// Check if session is active
+if (session_status() == PHP_SESSION_ACTIVE) {
+    echo "Session is active!";
+}
+?>

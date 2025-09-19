@@ -1,0 +1,49 @@
+ <?php
+echo "<h3>PHP File Functions </h3>";
+
+// 1. fopen() – Open file for reading
+$file = fopen("test.txt", "r") or die("Unable to open test.txt!");
+
+// 2. filesize() – Get file size
+$size = filesize("test.txt");
+echo "File size: $size bytes<br>";
+
+// 3. fread() – Read full file content
+echo "<b>Using fread():</b><br>";
+echo nl2br(fread($file, $size)) . "<br>";
+fclose($file);
+
+// 4. file_get_contents() – Read file in one go
+echo "<b>Using file_get_contents():</b><br>";
+echo nl2br(file_get_contents("test.txt")) . "<br>";
+
+// 5. fgets() + feof() – Read line-by-line
+$file = fopen("test.txt", "r");
+echo "<b>Reading line-by-line:</b><br>";
+while (!feof($file)) {
+    echo nl2br(fgets($file));
+}
+fclose($file);
+
+// 6. file_put_contents() – Append text directly
+file_put_contents("test.txt", "\nThis line is appended by PHP.", FILE_APPEND);
+
+// 7. fopen() + fwrite() – Create new file and write data
+$newFile = fopen("newfile.txt", "w");
+fwrite($newFile, "This is a new file created with fwrite().\n");
+fclose($newFile);
+
+// 8. copy() – Copy file
+copy("test.txt", "copy.txt");
+
+// 9. rename() – Rename copied file
+rename("copy.txt", "renamed.txt");
+
+// 10. unlink() – Delete renamed file
+unlink("renamed.txt");
+
+// 11. unlink() – Delete new file created by fwrite()
+unlink("newfile.txt");
+
+echo "<br><b>All file operations completed successfully!</b>";
+?>

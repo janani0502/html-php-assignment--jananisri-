@@ -1,0 +1,22 @@
+<?php 
+if(!isset($_COOKIE['visits']))$_COOKIE['visits']=0; 
+$visits=$_COOKIE['visits']+1; 
+setcookie('visits',$visits,time()+3600*24*365); 
+?> 
+<html> 
+<head><style type="text/css"> 
+div{font-size:20pt;color:navy;font-family:arial black;width:50%;background-color:white} 
+p{font-size:18pt;color:lime;font-weight:bold;text-align:center;font-family:bauhus93} 
+.groove{border-style:groove} 
+.dotted{border-style:dotted} 
+</style></head><body bgcolor="salmon"> 
+<?php 
+echo'<br><br><center><div class="groove">HIT COUNTER 
+USING COOKIES</div><br>'; 
+echo'<div class="dotted">'; 
+if($visits>1){ 
+echo"<p>This is visit number $visits</p>";} 
+else { 
+echo'<p>Welcome to my Website! Click here for a 
+tour!</p>';} echo"<br></center></div>"; 
+?></body></html> 
