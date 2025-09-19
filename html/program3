@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakshmisree T A - Portfolio</title>
+    <style>
+{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f9f9f9;
+            color: #333;
+        }
+header {
+            background: linear-gradient(135deg, #2b5876, #4e4376);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+header h1 {
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+         nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            background: #444;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            background: #666;
+        }
+        main {
+            padding: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            color: #4e4376;
+        }
+        .about {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .project-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        footer {
+            text-align: center;
+            background: #333;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lakshmisree T A</h1>
+        <p>B.Sc. Computer Science | Department: CS</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <!-- About Section -->
+        <section id="about" class="about">
+            <h2 class="section-title">About Me</h2>
+            <p>
+                I am a passionate Computer Science graduate with strong interests in web development, 
+                database management, and software analysis. I have successfully completed an internship 
+                in <strong>Web Development</strong> and <strong>Software Analysis</strong> at Nano Dairy, 
+                where I worked on real-world projects, enhancing my technical and problem-solving skills.
+            </p>
+            <p>
+                I enjoy working on innovative projects, learning new technologies, and applying them to build 
+                impactful solutions.
+            </p>
+        </section>
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects">
+                <article class="project-card">
+                    <h3>Smart Waste Reporting Platform</h3>
+                    <p>A mobile app for residents to report missed garbage collections in real-time, 
+                       ensuring faster response from waste management authorities.</p>
+                </article>
+                <article class="project-card">
+                    <h3>Bakery Business Website</h3>
+                    <p>An interactive and visually appealing bakery promotion website built using HTML, 
+                       CSS, and JavaScript to showcase products and engage customers.</p>
+                </article>
+                <article class="project-card">
+                    <h3>Quiz App with Timer</h3>
+                    <p>A Flutter-based quiz application with a timer, score tracking, and local storage 
+                       using shared_preferences for persistent data.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer id="contact">
+        <p>© 2025 Lakshmisree T A | Email: lakshmisree@example.com</p>
+    </footer>
+</body>
+</html>
